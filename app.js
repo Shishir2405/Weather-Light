@@ -124,6 +124,9 @@ async function getData(inputCity){
         humidityValue.innerHTML="?";
         windSpeedValue.innerHTML="?";
         visibilityValue.innerHTML="?";
+        setTimeout(() => {
+          location.reload(true);
+        }, 5000);
         
     }
 }
