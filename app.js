@@ -101,15 +101,19 @@ async function getData(inputCity){
         windSpeedValue.innerHTML=response.data.wind_speed;
         visibilityValue.innerHTML=response.data.wind_degrees;
         locate.innerHTML=input.value;
-
-        if(lowTempValue<=2){
+        let minTemp = parseFloat(response.data.min_temp);
+        let humidity = parseFloat(response.data.humidity); 
+        if(minTemp<=2){
             img.src="other/mist.png";
+            reload();
         }
-        else if(tempValue >= -10 && tempValue <= 35 &&  humidityValue<= 50){
-            img.src="other/clear.png"
+        else if(minTemp>= -10 && minTemp <= 35 &&  humidity<= 50){
+            img.src="other/clear.png";
+            reload();
         }
-        else if(tempValue >= 5 && tempValue<= 25 && humidityValue > 70){
-            img.src="other/rain.png"
+        else if(minTemp >= 5 && minTemp<= 25 && humidity > 70){
+            img.src="other/rain.png";
+            reload();
         }
 
     }
@@ -124,9 +128,12 @@ async function getData(inputCity){
         humidityValue.innerHTML="?";
         windSpeedValue.innerHTML="?";
         visibilityValue.innerHTML="?";
-        setTimeout(() => {
-          location.reload(true);
-        }, 5000);
+        reload();
         
     }
+}
+function reload(){
+  setTimeout(() => {
+    location.reload(true);
+  }, 5000);
 }
