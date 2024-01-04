@@ -16,7 +16,7 @@ Weather Light is a simple and responsive weather application that allows users t
 - **Axios:** Used for making HTTP requests to fetch weather data.
 
 ## Usage
-- **Enter the desired location in the search bar.
+- Enter the desired location in the search bar.
 
 Click the search button to fetch and display the current weather conditions.
 
