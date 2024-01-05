@@ -8,8 +8,8 @@ let nav = document.querySelector("header");
 let input = document.querySelector("input");
 let slide = document.querySelector(".slider");
 let innerDiv = document.querySelectorAll(".divinner");
-let button=document.querySelector("button");
-let img=document.querySelector("img");
+let button = document.querySelector("button");
+let img = document.querySelector("img");
 
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -41,8 +41,10 @@ function changeEverythingToLight() {
   <span class="colorss"> Bright Weather!</span></h2>`;
   nav.style.color = "black";
   slide.classList.add("sliderForLight");
+
   for (inner of innerDiv) {
     inner.style.backgroundColor = "#B2EBF2";
+    
   }
 }
 function changeEverythingToDefault() {
@@ -59,80 +61,76 @@ function changeEverythingToDefault() {
   nav.style.color = "";
   input.classList.remove("inputStyleAfterLightMode");
   slide.classList.remove("sliderForLight");
+  
   for (inner of innerDiv) {
     inner.style.backgroundColor = "";
+    
   }
 }
 darkTheme.addEventListener("click", function () {
   darkTheme.checked ? changeEverythingToLight() : changeEverythingToDefault();
 });
-let tempValue=document.querySelector(".temperature-value");
-let lowTempValue=document.querySelector(".Low-temperture-value");
-let highTempValue=document.querySelector(".High-temperture-value");
-let humidityValue=document.querySelector(".Humidity-value");
-let windSpeedValue=document.querySelector(".Wind-speed-value");
-let visibilityValue=document.querySelector(".Visibility-value");
-let locate=document.querySelector(".location");
+let tempValue = document.querySelector(".temperature-value");
+let lowTempValue = document.querySelector(".Low-temperture-value");
+let highTempValue = document.querySelector(".High-temperture-value");
+let humidityValue = document.querySelector(".Humidity-value");
+let windSpeedValue = document.querySelector(".Wind-speed-value");
+let visibilityValue = document.querySelector(".Visibility-value");
+let locate = document.querySelector(".location");
 
-
-button.addEventListener("click",()=>{
-    let inputCity=input.value;
-    getData(inputCity);
-})
+button.addEventListener("click", () => {
+  let inputCity = input.value;
+  getData(inputCity);
+});
 
 const header = {
-  headers:{
-    'Accept':"application/json",
-    'X-RapidAPI-Key':'0e6ed78d9fmshc1d7ad822cf468fp1f020cjsn139147987250',
-    'X-RapidAPI-Host':'weather-by-api-ninjas.p.rapidapi.com'
-  }
+  headers: {
+    Accept: "application/json",
+    "X-RapidAPI-Key": "0e6ed78d9fmshc1d7ad822cf468fp1f020cjsn139147987250",
+    "X-RapidAPI-Host": "weather-by-api-ninjas.p.rapidapi.com",
+  },
 };
 
-let url=`https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=`;
+let url = `https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=`;
 
-async function getData(inputCity){
-    try{
-        let response=await axios.get(url+inputCity,header);
-        console.log(response.data.max_temp);
-        tempValue.innerHTML=response.data.temp;
-        lowTempValue.innerHTML=response.data.min_temp;
-        highTempValue.innerHTML=response.data.max_temp;
-        humidityValue.innerHTML=response.data.humidity;
-        windSpeedValue.innerHTML=response.data.wind_speed;
-        visibilityValue.innerHTML=response.data.wind_degrees;
-        locate.innerHTML=input.value;
-        let minTemp = parseFloat(response.data.min_temp);
-        let humidity = parseFloat(response.data.humidity); 
-        if(minTemp<=2){
-            img.src="other/mist.png";
-            reload();
-        }
-        else if(minTemp>= -10 && minTemp <= 35 &&  humidity<= 50){
-            img.src="other/clear.png";
-            reload();
-        }
-        else if(minTemp >= 5 && minTemp<= 25 && humidity > 70){
-            img.src="other/rain.png";
-            reload();
-        }
-
+async function getData(inputCity) {
+  try {
+    let response = await axios.get(url + inputCity, header);
+    console.log(response.data.max_temp);
+    tempValue.innerHTML = response.data.temp;
+    lowTempValue.innerHTML = response.data.min_temp;
+    highTempValue.innerHTML = response.data.max_temp;
+    humidityValue.innerHTML = response.data.humidity;
+    windSpeedValue.innerHTML = response.data.wind_speed;
+    visibilityValue.innerHTML = response.data.wind_degrees;
+    locate.innerHTML = input.value;
+    let minTemp = parseFloat(response.data.min_temp);
+    let humidity = parseFloat(response.data.humidity);
+    if (minTemp <= 2) {
+      img.src = "other/mist.png";
+      reload();
+    } else if (minTemp >= -10 && minTemp <= 35 && humidity <= 50) {
+      img.src = "other/clear.png";
+      reload();
+    } else if (minTemp >= 5 && minTemp <= 25 && humidity > 70) {
+      img.src = "other/rain.png";
+      reload();
     }
-    catch(err){
-       console.log(err);
-       img.src="other/404.png";
-       locate.style.color="red";
-       locate.innerText="404 ERROR";
-       tempValue.innerHTML= "?";
-        lowTempValue.innerHTML="?";
-        highTempValue.innerHTML="?";
-        humidityValue.innerHTML="?";
-        windSpeedValue.innerHTML="?";
-        visibilityValue.innerHTML="?";
-        reload();
-        
-    }
+  } catch (err) {
+    console.log(err);
+    img.src = "other/404.png";
+    locate.style.color = "red";
+    locate.innerText = "404 ERROR";
+    tempValue.innerHTML = "?";
+    lowTempValue.innerHTML = "?";
+    highTempValue.innerHTML = "?";
+    humidityValue.innerHTML = "?";
+    windSpeedValue.innerHTML = "?";
+    visibilityValue.innerHTML = "?";
+    reload();
+  }
 }
-function reload(){
+function reload() {
   setTimeout(() => {
     location.reload(true);
   }, 5000);
