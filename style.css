@@ -33,7 +33,7 @@ h1 {
   font-size: 1rem;
   position: relative;
   display: inline-block;
-  width: 3.5em;
+  width: 3.75em;
   height: 2em;
   transform-style: preserve-3d;
   perspective: 500px;
@@ -47,7 +47,7 @@ h1 {
   left: 0;
   top: 0;
   filter: blur(20px);
-  z-index: -1;
+  z-index:-1;
   border-radius: 50px;
   box-shadow: 0 0 10px rgba(124, 207, 255, 0.8),
     0 0 20px rgba(124, 207, 255, 0.6), 0 0 30px rgba(124, 207, 255, 0.4);
@@ -233,7 +233,7 @@ img {
     display: none;
   }
   .switch {
-    width: 3rem;
+    width: 3.5rem;
     height: 2rem;
     margin-right: 1rem;
   }
@@ -484,18 +484,14 @@ img {
 .sliderForLight {
   position: absolute;
   cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 2;
-  bottom: 0;
+  inset: 0;
   background-color: #17202a;
   transition: 0.4s;
   border-radius: 30px;
   border: 2px solid #333;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-  
 }
-.sliderForLight:before{
-  background :linear-gradient(91deg, #ff6347 50%, #ffd700 86.12%);
+.sliderForLight:before {
+  background: linear-gradient(91deg, #ff6347 50%, #ffd700 86.12%);
 }
 
