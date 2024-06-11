@@ -19,7 +19,7 @@ header {
   background-color: #1b262c;
   justify-content: space-between;
   z-index: 1000;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 h1 {
@@ -47,7 +47,7 @@ h1 {
   left: 0;
   top: 0;
   filter: blur(20px);
-  z-index:-1;
+  z-index: -1;
   border-radius: 50px;
   box-shadow: 0 0 10px rgba(124, 207, 255, 0.8),
     0 0 20px rgba(124, 207, 255, 0.6), 0 0 30px rgba(124, 207, 255, 0.4);
@@ -494,4 +494,3 @@ img {
 .sliderForLight:before {
   background: linear-gradient(91deg, #ff6347 50%, #ffd700 86.12%);
 }
-

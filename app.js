@@ -11,7 +11,6 @@ let innerDiv = document.querySelectorAll(".divinner");
 let button = document.querySelector("button");
 let img = document.querySelector("img");
 
-
 document.addEventListener("DOMContentLoaded", function () {
   if (darkTheme && themeIndicator) {
     darkTheme.addEventListener("change", function () {
@@ -44,7 +43,6 @@ function changeEverythingToLight() {
 
   for (inner of innerDiv) {
     inner.style.backgroundColor = "#B2EBF2";
-    
   }
 }
 function changeEverythingToDefault() {
@@ -61,10 +59,9 @@ function changeEverythingToDefault() {
   nav.style.color = "";
   input.classList.remove("inputStyleAfterLightMode");
   slide.classList.remove("sliderForLight");
-  
+
   for (inner of innerDiv) {
     inner.style.backgroundColor = "";
-    
   }
 }
 darkTheme.addEventListener("click", function () {
