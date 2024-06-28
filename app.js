@@ -83,8 +83,8 @@ button.addEventListener("click", () => {
 const header = {
   headers: {
     Accept: "application/json",
-    "X-RapidAPI-Key": "0e6ed78d9fmshc1d7ad822cf468fp1f020cjsn139147987250",
-    "X-RapidAPI-Host": "weather-by-api-ninjas.p.rapidapi.com",
+    "X-RapidAPI-Key": "your_api_key_rapid_api",
+    "X-RapidAPI-Host": "your_api_host_rapid_api",
   },
 };
 
