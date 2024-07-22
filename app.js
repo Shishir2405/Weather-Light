@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 
 const darkTheme = document.querySelector(".input_check");
@@ -106,16 +107,16 @@ async function getData(inputCity) {
       let snowAudio = document.querySelector(".snow");
       snowAudio.play();
       img.src = "other/mist.png";
-      reload();
+      
     } else if (minTemp >= -10 && minTemp <= 35 && humidity <= 50) {
       let clearAudio = document.querySelector(".clear");
       clearAudio.play();
       img.src = "other/clear.png";
-      reload();
+    
     } else if (minTemp >= 5 && minTemp <= 25 && humidity > 70) {
       let rainAudio = document.querySelector(".rain");
       rainAudio.play();
-      reload();
+  
     }
   } catch (err) {
     console.log(err);
@@ -136,3 +137,5 @@ async function getData(inputCity) {
 //     location.reload(true);
 //   }, 7000);
 // }
+
+

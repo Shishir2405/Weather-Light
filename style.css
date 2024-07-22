@@ -3,6 +3,7 @@
   padding: 0;
   font-family: "Poppins";
 }
+
 body {
   background-color: #1b262c;
   color: #fff;
@@ -19,11 +20,11 @@ header {
   background-color: #1b262c;
   justify-content: space-between;
   z-index: 1000;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 h1 {
-  font-size: 2.15rem;
+  font-size: 2.5rem;
   font-style: normal;
   font-weight: 600;
   margin-left: 1.5rem;
@@ -47,7 +48,7 @@ h1 {
   left: 0;
   top: 0;
   filter: blur(20px);
-  z-index:-1;
+  z-index: -1;
   border-radius: 50px;
   box-shadow: 0 0 10px rgba(124, 207, 255, 0.8),
     0 0 20px rgba(124, 207, 255, 0.6), 0 0 30px rgba(124, 207, 255, 0.4);
@@ -142,7 +143,8 @@ input {
   padding: 0.5rem;
   font-size: 1rem;
   border: 1px solid #fff;
-  background-color: inherit;
+  background-color: #1b262c;
+
   border-radius: 5px;
   margin-left: 1.5rem;
 }
@@ -493,4 +495,3 @@ img {
 .sliderForLight:before {
   background: linear-gradient(91deg, #ff6347 50%, #ffd700 86.12%);
 }
-
