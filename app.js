@@ -83,8 +83,8 @@ button.addEventListener("click", () => {
 const header = {
   headers: {
     Accept: "application/json",
-    "X-RapidAPI-Key": "your_api_key_rapid_api",
-    "X-RapidAPI-Host": "your_api_host_rapid_api",
+    "X-RapidAPI-Key": "0e6ed78d9fmshc1d7ad822cf468fp1f020cjsn139147987250",
+    "X-RapidAPI-Host": "weather-by-api-ninjas.p.rapidapi.com",
   },
 };
 
@@ -104,12 +104,18 @@ async function getData(inputCity) {
     let minTemp = parseFloat(response.data.min_temp);
     let humidity = parseFloat(response.data.humidity);
     if (minTemp <= 2) {
+      let snowAudio = document.querySelector(".snow");
+      snowAudio.play();
       img.src = "other/mist.png";
       reload();
     } else if (minTemp >= -10 && minTemp <= 35 && humidity <= 50) {
+      let clearAudio = document.querySelector(".clear");
+      clearAudio.play();
       img.src = "other/clear.png";
       reload();
     } else if (minTemp >= 5 && minTemp <= 25 && humidity > 70) {
+      let rainAudio = document.querySelector(".rain");
+      rainAudio.play();
       img.src = "other/rain.png";
       reload();
     }
@@ -130,5 +136,5 @@ async function getData(inputCity) {
 function reload() {
   setTimeout(() => {
     location.reload(true);
-  }, 5000);
+  }, 7000);
 }
