@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 
 
 const darkTheme = document.querySelector(".input_check");
